@@ -1,0 +1,88 @@
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+  text-shadow: 0 0 20px white;
+  letter-spacing: 0px;
+  
+  /* Добавьте эти стили для мобильных устройств */
+  font-size: clamp(1.5rem, 8vw, 4rem);
+  padding: 20px;
+  text-align: center;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Улучшите медиа-запрос */
+@media (min-width: 500px) {
+  .title {
+    letter-spacing: 20px;
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+}
+
+/* Добавьте дополнительный медиа-запрос для очень маленьких экранов */
+@media (max-width: 350px) {
+  .title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 10px;
+  }
+  
+  .title span {
+    margin-right: 5px !important;
+  }
+}
+
+/* Исправьте ошибку в селекторе (было span/> вместо span) */
+.title span {
+  opacity: 0;
+  animation: typing 1s ease forwards;
+  animation-delay: var(--delay);
+  display: inline-block; /* Добавьте для лучшего контроля */
+}
+
+/* Улучшите кнопку для мобильных */
+.btn {
+  border: none;
+  width: 15em;
+  max-width: 280px; /* Ограничьте максимальную ширину */
+  height: 5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #1C1A1C;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+/* Добавьте для мобильных устройств */
+@media (max-width: 500px) {
+  .btn {
+    width: 12em;
+    height: 4em;
+    gap: 8px;
+  }
+  
+  .text {
+    font-size: 0.9rem;
+  }
+  
+  .sparkle {
+    width: 20px;
+    height: 20px;
+  }
+}
