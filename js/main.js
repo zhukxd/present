@@ -1,4 +1,3 @@
-
 onload = () => {
   const c = setTimeout(() => {
     document.body.classList.remove("not-loaded");
@@ -11,7 +10,10 @@ onload = () => {
       if (index < titles.length) {
         titleElement.innerHTML += titles[index];
         index++;
-        setTimeout(appendTitle, 300); // 1000ms delay
+        
+        // Адаптивная задержка для мобильных
+        const delay = window.innerWidth < 500 ? 150 : 300;
+        setTimeout(appendTitle, delay);
       }
     }
 
